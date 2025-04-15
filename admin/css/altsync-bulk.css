@@ -1,0 +1,195 @@
+/**
+ * AltSync Bulk Page Styles
+ */
+
+.altsync-bulk-container {
+    margin: 20px 0;
+}
+
+.altsync-intro {
+    margin-bottom: 20px;
+}
+
+.altsync-stats {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-left: 4px solid #0073aa;
+}
+
+.altsync-warning {
+    margin: 20px 0;
+    padding: 15px;
+    border-left-width: 6px !important;
+    background-color: #fcf9e8 !important;
+}
+
+.altsync-actions {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.altsync-selection {
+    margin-bottom: 15px;
+}
+
+.altsync-selection label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.altsync-sync-mode {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f8f8f8;
+    border: 1px solid #eee;
+}
+
+.altsync-sync-mode h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.altsync-sync-mode label {
+    display: block;
+    margin-bottom: 12px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #e5e5e5;
+    cursor: pointer;
+}
+
+.altsync-sync-mode label:last-child {
+    background: #fff8f8;
+    border-color: #ffcbcb;
+}
+
+.altsync-sync-mode .description {
+    margin: 5px 0 0 25px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.altsync-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.altsync-buttons .spinner {
+    margin: 0;
+}
+
+.altsync-results {
+    margin: 20px 0;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.altsync-summary {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f0f6fc;
+    border-left: 4px solid #2271b1;
+}
+
+.altsync-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.altsync-item {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+}
+
+.altsync-item-image {
+    width: 60px;
+    flex-shrink: 0;
+}
+
+.altsync-item-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.altsync-item-details {
+    flex-grow: 1;
+}
+
+.altsync-item-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.altsync-image-selection {
+    margin-top: 20px;
+}
+
+.altsync-image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.altsync-image-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #f9f9f9;
+}
+
+.altsync-image-item.no-alt {
+    opacity: 0.5;
+    background: #f0f0f0;
+}
+
+.altsync-image-preview {
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.altsync-image-preview img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.altsync-image-info {
+    font-size: 12px;
+}
+
+.altsync-image-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.altsync-image-alt {
+    word-break: break-word;
+}
+
+.altsync-no-alt {
+    color: #999;
+    font-style: italic;
+} 

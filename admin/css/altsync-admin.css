@@ -1,0 +1,58 @@
+/**
+ * CSS for the AltSync Admin interface
+ *
+ * @since 0.1.0
+ */
+
+/* Style for the feedback message paragraph */
+.altsync-message {
+    display: none; /* Initially hidden */
+    padding: 8px 12px;
+    margin-top: 8px !important; /* Add some space above */
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+/* Success message style (similar to WP success notice) */
+.altsync-message.notice-success {
+    display: block;
+    background-color: #f0f6fc;
+    border-color: #007cba;
+    color: #062437;
+}
+
+/* Error message style (similar to WP error notice) */
+.altsync-message.notice-error {
+    display: block;
+    background-color: #fef0f1;
+    border-color: #d63638;
+    color: #491113;
+}
+
+/* Warning message style (if needed later) */
+.altsync-message.notice-warning {
+    display: block;
+    background-color: #fff8e5;
+    border-color: #ffb900;
+    color: #3f2a00;
+}
+
+/* Ensure spinner alignment looks okay next to the button */
+.altsync-sync-button + .altsync-status.spinner {
+    float: none;
+    vertical-align: middle;
+    margin-top: -3px; /* Adjust vertical alignment if needed */
+    margin-left: 5px;
+    /* visibility: hidden; /* Spinner visibility is controlled by inline style initially */
+}
+
+/* When the button is working, the spinner is shown via inline style */
+/* .altsync-sync-button:disabled + .altsync-status.spinner {
+    visibility: visible;
+} */
+
+/* Add styles for the button when disabled */
+.altsync-sync-button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.7;
+} 
