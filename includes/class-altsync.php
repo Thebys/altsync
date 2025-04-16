@@ -78,6 +78,7 @@ class AltSync {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
+		$this->define_api_hooks();
 		$this->define_public_hooks();
 
 	}
@@ -91,6 +92,7 @@ class AltSync {
 	 * - AltSync_i18n. Defines internationalization functionality.
 	 * - AltSync_Admin. Defines all hooks for the admin area.
 	 * - AltSync_Public. Defines all hooks for the public side of the site.
+	 * - AltSync_API. Defines API functionality.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -122,6 +124,11 @@ class AltSync {
 		 * side of the site.
 		 */
 		// require_once ALTSYNC_PLUGIN_DIR . 'public/class-altsync-public.php'; // Not needed for MVP
+
+		/**
+		 * The class responsible for defining all API functionality.
+		 */
+		require_once ALTSYNC_PLUGIN_DIR . 'includes/class-altsync-api.php';
 
 		$this->loader = new AltSync_Loader();
 
@@ -168,6 +175,23 @@ class AltSync {
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu' );
 		$this->loader->add_action( 'wp_ajax_altsync_bulk_preview', $plugin_admin, 'ajax_bulk_preview' );
 		$this->loader->add_action( 'wp_ajax_altsync_bulk_sync', $plugin_admin, 'ajax_bulk_sync' );
+
+	}
+
+	/**
+	 * Register all of the hooks related to the API functionality
+	 * of the plugin.
+	 *
+	 * @since    0.4.0
+	 * @access   private
+	 */
+	private function define_api_hooks() {
+
+		$plugin_admin = new AltSync_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_api = new AltSync_API( $this->get_plugin_name(), $this->get_version(), $plugin_admin );
+
+		// Register the REST API endpoints when WordPress REST API is initialized
+		$this->loader->add_action( 'rest_api_init', $plugin_api, 'register_endpoints' );
 
 	}
 

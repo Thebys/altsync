@@ -234,11 +234,11 @@ class AltSync_Admin {
      * Searches post_content for image class `wp-image-{id}` and image URLs.
      *
      * @since 0.1.0
-     * @access private
+     * @access public
      * @param int $attachment_id The ID of the attachment.
      * @return array An array of unique post IDs.
      */
-    private function find_posts_using_image( $attachment_id ) {
+    public function find_posts_using_image( $attachment_id ) {
         global $wpdb;
         $found_ids = array();
 
@@ -693,15 +693,16 @@ class AltSync_Admin {
     }
 
     /**
-     * Update posts with empty alt text for a specific image.
-     * 
-     * @since 0.2.0
+     * Update posts with empty alt text for the given attachment.
+     *
+     * @since 0.3.0
+     * @access public
      * @param int $attachment_id The attachment ID.
-     * @param array $post_ids Array of post IDs to update.
-     * @param string $alt_text The alt text to set.
+     * @param array $post_ids Array of post IDs to check.
+     * @param string $alt_text The new alt text to set.
      * @return int Number of posts updated.
      */
-    private function update_posts_with_empty_alt($attachment_id, $post_ids, $alt_text) {
+    public function update_posts_with_empty_alt($attachment_id, $post_ids, $alt_text) {
         $updated_count = 0;
         $attachment_url = wp_get_attachment_url($attachment_id);
         $image_basename = $attachment_url ? wp_basename($attachment_url) : null;
@@ -815,15 +816,15 @@ class AltSync_Admin {
     }
 
     /**
-     * Update all instances of alt text for a specific image regardless of current value.
+     * Update posts with any alt text (empty or not) for a specific image.
      * 
      * @since 0.3.0
      * @param int $attachment_id The attachment ID.
      * @param array $post_ids Array of post IDs to update.
-     * @param string $alt_text The alt text to set.
+     * @param string $alt_text The new alt text to set.
      * @return int Number of posts updated.
      */
-    private function update_posts_with_any_alt($attachment_id, $post_ids, $alt_text) {
+    public function update_posts_with_any_alt($attachment_id, $post_ids, $alt_text) {
         $updated_count = 0;
         $attachment_url = wp_get_attachment_url($attachment_id);
         $image_basename = $attachment_url ? wp_basename($attachment_url) : null;

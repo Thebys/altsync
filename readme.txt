@@ -1,10 +1,10 @@
 === AltSync ===
-Contributors: your-wordpress-org-username
-Donate link: https://your-donate-link.com/
+Contributors: Tomáš "Thebys" Biheler
+Donate link: https://biheler.eu
 Tags: images, alt text, accessibility, media, sync, gutenberg, editor
 Requires at least: 5.2
 Tested up to: 6.8
-Stable tag: 0.3.0
+Stable tag: 0.4.0
 Requires PHP: 7.2
 License: No License
 
@@ -25,6 +25,7 @@ Features:
 *   Dry run preview option to see changes before applying them.
 *   Finds all posts/pages using specific images.
 *   Strong warnings and confirmations to prevent accidental changes.
+*   REST API endpoint for external applications to trigger alt text synchronization.
 
 == Installation ==
 
@@ -52,11 +53,23 @@ This option shows you which posts would be affected by the synchronization witho
 
 Yes, especially when using the "Update ALL alt text" mode, which can make widespread changes to your content. Always backup your database before performing bulk operations.
 
+= How can I use the API endpoint with external applications? =
+
+The plugin provides a REST API endpoint at `/wp-json/altsync/v1/sync-image` that can be called with a POST request. You need to authenticate using WordPress application passwords. The endpoint accepts two parameters:
+- `attachment_id`: The ID of the image in the Media Library
+- `sync_mode`: Either 'empty' (safer mode) or 'all' (aggressive mode)
+
 == Screenshots ==
 
 1. The bulk synchronization page with dry run preview.
 
 == Changelog ==
+
+= 0.4.0 =
+*   Added REST API endpoint for external applications to trigger alt text synchronization.
+*   API supports both empty alt text and full replacement sync modes.
+*   Authentication required via WordPress application passwords.
+*   Updated plugin architecture to accommodate API functionality.
 
 = 0.3.0 =
 *   Added new sync mode to replace ALL alt text (not just empty ones).
@@ -74,6 +87,9 @@ Yes, especially when using the "Update ALL alt text" mode, which can make widesp
 *   Initial plugin structure.
 
 == Upgrade Notice ==
+
+= 0.4.0 =
+*   Added REST API endpoint for external applications like altgen browser extension to trigger alt text synchronization.
 
 = 0.3.0 =
 *   Added new sync mode to replace ALL alt text (not just empty ones). Use with caution and backup your database first!
