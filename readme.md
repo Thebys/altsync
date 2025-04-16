@@ -53,7 +53,7 @@ Navigate to Media → Bulk Alt Sync in the WordPress admin where you can:
 ### Automated Sync with [AltGen](https://github.com/thebys/altgen)
 For the best experience, use AltSync together with the [AltGen](https://github.com/thebys/altgen) browser extension:
 
-1. Install the [AltGen](https://github.com/thebys/altgen) browser extension (available for Chrome/Firefox)
+1. Install the [AltGen](https://github.com/thebys/altgen) browser extension (available for ~~Chrome~~/Firefox)
 2. Configure [AltGen](https://github.com/thebys/altgen) to connect to your WordPress site
 3. Use [AltGen](https://github.com/thebys/altgen) to generate AI-assisted alt text for your images
 4. [AltGen](https://github.com/thebys/altgen) will automatically call AltSync's API to propagate the alt text changes
