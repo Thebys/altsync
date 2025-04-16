@@ -19,7 +19,7 @@
  *
  * @package    AltSync
  * @subpackage AltSync/includes
- * @author     Your Name <email@example.com>
+ * @author     Tomáš "Thebys" Biheler
  */
 class AltSync_Loader {
 

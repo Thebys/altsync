@@ -88,6 +88,13 @@ class AltSync_API {
                 ),
             ),
         ));
+
+        // Add status endpoint to check if the plugin is active and ready
+        register_rest_route('altsync/v1', '/status', array(
+            'methods'             => 'GET',
+            'callback'            => array($this, 'handle_status_check'),
+            'permission_callback' => '__return_true', // Publicly accessible
+        ));
     }
 
     /**
@@ -172,6 +179,24 @@ class AltSync_API {
                 'success' => true,
                 'message' => $message,
                 'updated_count' => $result,
+            ),
+            200
+        );
+    }
+
+    /**
+     * Handle the status check API request.
+     *
+     * @since    0.4.0
+     * @return   WP_REST_Response The response object with plugin status.
+     */
+    public function handle_status_check() {
+        return new WP_REST_Response(
+            array(
+                'success' => true,
+                'status'  => 'active',
+                'version' => $this->version,
+                'message' => __('AltSync plugin is active and ready to use.', 'altsync'),
             ),
             200
         );

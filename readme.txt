@@ -4,7 +4,7 @@ Donate link: https://biheler.eu
 Tags: images, alt text, accessibility, media, sync, gutenberg, editor
 Requires at least: 5.2
 Tested up to: 6.8
-Stable tag: 0.4.0
+Stable tag: 0.4.1
 Requires PHP: 7.2
 License: No License
 
@@ -25,7 +25,8 @@ Features:
 *   Dry run preview option to see changes before applying them.
 *   Finds all posts/pages using specific images.
 *   Strong warnings and confirmations to prevent accidental changes.
-*   REST API endpoint for external applications to trigger alt text synchronization.
+*   REST API endpoints for external applications to interact with the plugin.
+*   Status check endpoint to verify plugin is active and ready to use.
 
 == Installation ==
 
@@ -53,17 +54,25 @@ This option shows you which posts would be affected by the synchronization witho
 
 Yes, especially when using the "Update ALL alt text" mode, which can make widespread changes to your content. Always backup your database before performing bulk operations.
 
-= How can I use the API endpoint with external applications? =
+= How can I use the API endpoints with external applications? =
 
-The plugin provides a REST API endpoint at `/wp-json/altsync/v1/sync-image` that can be called with a POST request. You need to authenticate using WordPress application passwords. The endpoint accepts two parameters:
-- `attachment_id`: The ID of the image in the Media Library
-- `sync_mode`: Either 'empty' (safer mode) or 'all' (aggressive mode)
+The plugin provides REST API endpoints for integration with external applications:
+
+1. **Sync endpoint**: `/wp-json/altsync/v1/sync-image` (POST) that can be called to synchronize alt text for a specific image. Requires authentication using WordPress application passwords.
+
+2. **Status endpoint**: `/wp-json/altsync/v1/status` (GET) that allows checking if the plugin is active and ready to use. This endpoint is publicly accessible and doesn't require authentication.
+
+Refer to the API documentation for more details.
 
 == Screenshots ==
 
 1. The bulk synchronization page with dry run preview.
 
 == Changelog ==
+
+= 0.4.1 =
+*   Added status check endpoint at `/wp-json/altsync/v1/status` to allow external applications to verify plugin availability.
+*   Updated API documentation with comprehensive examples and best practices.
 
 = 0.4.0 =
 *   Added REST API endpoint for external applications to trigger alt text synchronization.
@@ -87,6 +96,9 @@ The plugin provides a REST API endpoint at `/wp-json/altsync/v1/sync-image` that
 *   Initial plugin structure.
 
 == Upgrade Notice ==
+
+= 0.4.1 =
+*   Added status check endpoint to allow external applications to verify plugin availability before making API calls.
 
 = 0.4.0 =
 *   Added REST API endpoint for external applications like altgen browser extension to trigger alt text synchronization.

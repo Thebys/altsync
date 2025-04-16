@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       AltSync
  * Description:       Synchronizes updated media library alt text into posts, replacing empty / stale alt attributes.
- * Version:           0.4.0
+ * Version:           0.4.1
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Tomáš "Thebys" Biheler
@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Define constants
  */
-define( 'ALTSYNC_VERSION', '0.4.0' );
+define( 'ALTSYNC_VERSION', '0.4.1' );
 // @phpstan-ignore-next-line
 define( 'ALTSYNC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 // @phpstan-ignore-next-line
