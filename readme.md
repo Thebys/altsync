@@ -11,13 +11,13 @@
    1. Update the alt text on image placing, overriding the default preventing alt text reuse.
    2. Update it in Media Library and it does not get propagated through half the places.
 
-### Here comes AltSync (brother of AltGet)
+### Here comes AltSync, [brother of AltGet](https://github.com/thebys/altget)
 
-AltSync is a WordPress plugin that synchronizes (freshly updated) media library alt text into posts, replacing empty or stale alt attributes. It works in tandem with the AltGet browser extension to create a powerful accessibility workflow.
+AltSync is a WordPress plugin that synchronizes (freshly updated) media library alt text into posts, replacing empty or stale alt attributes. It works in tandem with the [AltGet](https://github.com/thebys/altget) browser extension to create a powerful accessibility workflow.
 
 ## 🔄 The Alt Text Workflow
 
-1. **AltGet**: AI-assisted browser extension that helps generate high-quality alt text for images
+1. **[AltGet](https://github.com/thebys/altget)**: AI-assisted browser extension that helps generate high-quality alt text for images
 2. **AltSync**: WordPress plugin that ensures the updated alt text is applied everywhere the image is used
 
 This combination creates a seamless workflow for maintaining accessibility standards across your WordPress site.
@@ -29,7 +29,7 @@ This combination creates a seamless workflow for maintaining accessibility stand
   - "Empty" mode (safer): only updates images with empty alt text
   - "All" mode: replaces all instances of alt text for selected images
 - **Preview Before Committing**: Dry run feature to see potential changes before applying
-- **API Integration**: REST endpoints for external applications like AltGet
+- **API Integration**: REST endpoints for external applications like [AltGet](https://github.com/thebys/altget)
 - **Status Check**: Public endpoint to verify plugin availability
 
 ## 📦 Installation
@@ -46,13 +46,13 @@ Navigate to Media → Bulk Alt Sync in the WordPress admin where you can:
 - Choose between updating only empty alt text or all instances
 - Preview changes before committing
 
-### Automated Sync with AltGet
-For the best experience, use AltSync together with the AltGet browser extension:
+### Automated Sync with [AltGet](https://github.com/thebys/altget)
+For the best experience, use AltSync together with the [AltGet](https://github.com/thebys/altget) browser extension:
 
-1. Install the AltGet browser extension (available for Chrome/Firefox)
-2. Configure AltGet to connect to your WordPress site
-3. Use AltGet to generate AI-assisted alt text for your images
-4. AltGet will automatically call AltSync's API to propagate the alt text changes
+1. Install the [AltGet](https://github.com/thebys/altget) browser extension (available for Chrome/Firefox)
+2. Configure [AltGet](https://github.com/thebys/altget) to connect to your WordPress site
+3. Use [AltGet](https://github.com/thebys/altget) to generate AI-assisted alt text for your images
+4. [AltGet](https://github.com/thebys/altget) will automatically call AltSync's API to propagate the alt text changes
 
 ## 🔌 API Documentation
 
@@ -100,7 +100,7 @@ Yes, especially when using the "Update ALL alt text" mode, which can make widesp
 - Updated API documentation with comprehensive examples
 
 ### 0.4.0
-- Added REST API endpoint for external applications like AltGet
+- Added REST API endpoint for external applications like [AltGet](https://github.com/thebys/altget)
 - API supports both empty alt text and full replacement sync modes
 - Authentication via WordPress application passwords
 
