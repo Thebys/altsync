@@ -4,7 +4,7 @@
 ![WordPress](https://img.shields.io/badge/WordPress-5.2+-green)
 ![PHP](https://img.shields.io/badge/PHP-7.2+-purple)
 
-## The original problem with Wordpress alts
+## The original problem with Wordpress image alt texts…
 
 1. Ain't nobody got time for that.
 2. It does not exactly work in a very user friendly way, because when you do have time for it, you either:
@@ -17,8 +17,11 @@ AltSync is a WordPress plugin that synchronizes (freshly updated) media library 
 
 ## 🔄 The Alt Text Workflow
 
-1. **[AltGen](https://github.com/thebys/altgen)**: AI-assisted browser extension that helps generate high-quality alt text for images
-2. **AltSync**: WordPress plugin that ensures the updated alt text is applied everywhere the image is used
+1. **[AltGen](https://github.com/thebys/altgen)**
+   - AI-assisted browser extension that helps generate high-quality alt text for images
+   - It can update alt text of user selected image in Wordpress Media Library
+   - It can call AltSync API to propagate alt text changes from Media Library to posts.
+2. **AltSync**: This WordPress plugin - it ensures the fresh updated alt text in Media Library are applied everywhere the image is used
 
 This combination creates a seamless workflow for maintaining accessibility standards across your WordPress site.
 
@@ -40,11 +43,12 @@ This combination creates a seamless workflow for maintaining accessibility stand
 
 ## 🚀 Usage
 
-### Manual Sync
+### Manual / bulk sync options
 Navigate to Media → Bulk Alt Sync in the WordPress admin where you can:
-- Select multiple images to sync
-- Choose between updating only empty alt text or all instances
-- Preview changes before committing
+- Select all images to sync (not thoroughly tested, dangerous and slow, make sure to have DB backup!)
+- Select multiple images to sync (great for semi-automated HITL workflows)
+- Choose between updating only empty alt text or all instances (honor your overrides.. or don't!)
+- Preview changes before committing (not very detailed)
 
 ### Automated Sync with [AltGen](https://github.com/thebys/altgen)
 For the best experience, use AltSync together with the [AltGen](https://github.com/thebys/altgen) browser extension:
@@ -56,7 +60,7 @@ For the best experience, use AltSync together with the [AltGen](https://github.c
 
 ## 🔌 API Documentation
 
-AltSync provides two REST API endpoints:
+AltSync provides two REST API endpoints  (used by guess what - ... AltGen):
 
 ### Status Endpoint
 ```
@@ -89,6 +93,9 @@ However, there is also an "update all" mode that will replace ALL alt text for t
 
 Yes, it works by modifying the saved post content, so it's compatible with both the Classic Editor and the Block Editor.
 
+### Do I need this if I include ALL images directly via Elementor?
+
+Actually maybe not, it seems Elementor handles updating / propagating ALT text rather good without even needing to resave anything a simple reload / cache bust seems to do it in my env. However you may still greatly benefit from HITL [AltGen](https://github.com/thebys/altgen) browser extension to improve accessibility and SEO workflow.
 ### Should I backup my database before using this plugin?
 
 Yes, especially when using the "Update ALL alt text" mode, which can make widespread changes to your content. Always backup your database before performing bulk operations.
