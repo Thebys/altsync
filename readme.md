@@ -11,7 +11,7 @@
    1. Update the alt text on image placing, overriding the default preventing alt text reuse.
    2. Update it in Media Library and it does not get propagated through half the places.
 
-### Here comes AltSync, [brother of AltGen](https://github.com/thebys/altget)
+### Here comes AltSync, [brother of AltGen](https://github.com/thebys/altgen)
 
 AltSync is a WordPress plugin that synchronizes (freshly updated) media library alt text into posts, replacing empty or stale alt attributes. It works in tandem with the [AltGen](https://github.com/thebys/altgen) browser extension to create a powerful accessibility workflow.
 
